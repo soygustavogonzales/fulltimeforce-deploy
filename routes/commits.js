@@ -12,7 +12,7 @@ router.get('/', async function(req, res, next) {
 
   try {
 
-    const response = await axios.get('https://api.github.com/repos/soygustavogonzales/producersdirect/commits', {
+    const response = await axios.get('https://api.github.com/repos/soygustavogonzales/fulltimeforce/commits', {
       headers: {
         'Authorization': `${access_token}`
       }
