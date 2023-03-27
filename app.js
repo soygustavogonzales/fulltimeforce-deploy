@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
-const PORT = process.env.PORT || 3001
+//const PORT = process.env.PORT || 3001
 
 var commitsRouter = require('./routes/commits');
 
@@ -37,5 +37,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(PORT, () => console.log('server is running on ', PORT))
+//app.listen(PORT, () => console.log('server is running on ', PORT))
 module.exports = app;
