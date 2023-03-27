@@ -18,7 +18,18 @@ router.get('/', async function(req, res, next) {
       }
     })
 
-    res.send(response.data)
+    const data = response.data.map( e => {
+      return {
+        author_name: e.commit.author.name,
+        //author_profile_url: e.author.html_url || "",
+        //author_avatar_url: e.committer.avatar_url || "",
+        commit_message: e.commit.message,
+        commit_url: e.commit.url,
+        date: e.commit.author.date
+      }
+    });
+
+    res.send(data)
     /* 
     const oct = await octokit.request("GET /repos/{owner}/{repo}/commits", {
       owner:"soygustavogonzales",
